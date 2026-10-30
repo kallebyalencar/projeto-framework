@@ -1,0 +1,308 @@
+@import '@fontsource/ibm-plex-sans/latin-400.css';
+@import '@fontsource/ibm-plex-sans/latin-700.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-700.css';
+
+:root {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #000;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --color-muted: #7e7e7e;
+  --color-rule: #f0f0f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+  background: #f0d62e;
+}
+
+.resume {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 88px 60px 60px 48px;
+}
+.resume-header {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+  min-height: 120px;
+}
+.monogram {
+  display: grid;
+  place-items: center;
+  flex: 0 0 120px;
+  height: 120px;
+  background: #f0d62e;
+  font-size: 58.732px;
+  font-weight: 700;
+}
+.identity {
+  font-family: var(--font-mono);
+}
+.identity h1 {
+  font-size: 22px;
+  line-height: 29px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+.identity p {
+  font-size: 16px;
+  line-height: 21px;
+}
+.resume-body {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 908fr) minmax(0, 424fr);
+  grid-template-rows: auto 115px;
+  min-height: 1260px;
+}
+.design-dividers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.career,
+.sidebar,
+.resume-footer {
+  position: relative;
+  z-index: 1;
+}
+.career {
+  padding: 40px 32px 68px 0;
+  font-size: 18px;
+  line-height: 36px;
+}
+.biography {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  color: rgb(0 0 0 / 28%);
+}
+.experience .section-title {
+  margin-bottom: 26px;
+}
+.resume-entry h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 36px;
+}
+.entry-role {
+  font: 700 18px / 36px var(--font-mono);
+  color: var(--color-muted);
+  margin: 7px 0;
+}
+.experience .resume-entry + .resume-entry {
+  margin-top: 53px;
+}
+.entry-description {
+  white-space: pre-line;
+}
+.sidebar {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  padding: 30px 0 0 41px;
+  font-size: 18px;
+  line-height: 36px;
+}
+.education .section-title {
+  margin-bottom: 29px;
+}
+.education .resume-entry + .resume-entry {
+  margin-top: 46px;
+}
+.education .resume-entry:nth-of-type(3) {
+  margin-top: 37px;
+}
+.education .resume-entry:nth-of-type(4) {
+  margin-top: 46px;
+}
+.contact {
+  margin-top: 71px;
+}
+.contact .section-title {
+  margin-bottom: 18px;
+}
+.contact address {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 36px;
+}
+.contact strong {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.resume-footer {
+  grid-column: 1;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 64px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  color: #b1b1b1;
+}
+
+/* The original divider asset preserves Figma geometry at its native canvas size.
+   Fluid layouts use borders so rules continue to follow flowing content. */
+@media (max-width: 1439px) {
+  .design-dividers {
+    display: none;
+  }
+  .resume-body {
+    min-height: 0;
+    grid-template-rows: auto auto;
+  }
+  .sidebar {
+    border-left: 1px solid var(--color-rule);
+    padding-left: 32px;
+  }
+  .contact {
+    border-top: 1px solid var(--color-rule);
+    margin-left: -33px;
+    padding: 32px 0 0 32px;
+    margin-top: 40px;
+  }
+  .resume-footer {
+    border-top: 1px solid var(--color-rule);
+    padding: 48px 24px 24px 0;
+  }
+  .entry-description {
+    white-space: normal;
+  }
+}
+@media (max-width: 1000px) {
+  .resume {
+    padding: 48px 32px;
+  }
+  .resume-body {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+  .resume-header {
+    gap: 24px;
+  }
+  .identity p {
+    max-width: 560px;
+  }
+  .career {
+    padding-right: 24px;
+  }
+  .sidebar {
+    padding-left: 24px;
+  }
+  .contact {
+    margin-left: -25px;
+    padding-left: 24px;
+  }
+}
+@media (max-width: 700px) {
+  .resume {
+    padding: 32px 24px;
+  }
+  .resume-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .monogram {
+    flex-basis: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+  .identity h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .identity p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+  .resume-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .career {
+    padding: 32px 0 40px;
+    font-size: 17px;
+    line-height: 32px;
+  }
+  .resume-entry h3,
+  .entry-role {
+    font-size: 17px;
+    line-height: 30px;
+  }
+  .biography {
+    margin-bottom: 32px;
+  }
+  .experience .resume-entry + .resume-entry {
+    margin-top: 32px;
+  }
+  .sidebar {
+    padding: 32px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--color-rule);
+    font-size: 17px;
+    line-height: 32px;
+  }
+  .education .resume-entry + .resume-entry {
+    margin-top: 32px;
+  }
+  .contact {
+    margin: 32px 0 0;
+    padding: 24px 0 32px;
+  }
+  .contact address {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .resume-footer {
+    padding: 24px 0 0;
+    font-size: 11px;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+  }
+}
+@media print {
+  .resume {
+    padding: 0;
+  }
+  .resume-header {
+    break-inside: avoid;
+  }
+  .resume-entry,
+  .contact {
+    break-inside: avoid;
+  }
+}
